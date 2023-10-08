@@ -2,6 +2,8 @@ package gui;
 
 import ipc.practica2.Appstate;
 import ipc.practica2.Pedido;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,6 +21,13 @@ public class FrameHistorial extends javax.swing.JFrame {
         setTitle("Historial de Pedidos");
         
         this.llenartabla();
+        
+        this.addWindowListener(new WindowAdapter() {
+           @Override
+           public void windowClosing(WindowEvent e) {
+               Appstate.serializar();
+           }
+        });
     }
     
     public void llenartabla (){
@@ -39,6 +48,7 @@ public class FrameHistorial extends javax.swing.JFrame {
             modelo.setValueAt(pedidos.getMonto(), i, 2);
             modelo.setValueAt(pedidos.getFecha(), i, 3);
         }
+        
         
         this.jTable1.setModel(modelo);
     }

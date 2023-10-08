@@ -6,6 +6,8 @@ import ipc.practica2.Motocicleta2;
 import ipc.practica2.Motocicleta3;
 import ipc.practica2.Pedido;
 import ipc.practica2.Productos;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
@@ -34,6 +36,13 @@ public class FramePprincipal extends javax.swing.JFrame {
         
         this.llenartablaproductos();
         this.Totalpedidos();
+        
+        this.addWindowListener(new WindowAdapter() {
+           @Override
+           public void windowClosing(WindowEvent e) {
+               Appstate.serializar();
+           }
+        });
     }
     
     public void llenartablaproductos(){
@@ -43,7 +52,7 @@ public class FramePprincipal extends javax.swing.JFrame {
         modelo.setRowCount(tamano);
         
         modelo.addColumn("Producto");
-        modelo.addColumn("Precio");
+        modelo.addColumn("Precio en Quetzales");
         
         for(int i = 0; i<tamano; i++){
             Productos producto = Appstate.productos.get(i);
@@ -116,7 +125,7 @@ public class FramePprincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Producto", "Precio"
+                "Producto", "Precio en Quetzales"
             }
         ) {
             Class[] types = new Class [] {
@@ -416,7 +425,7 @@ public class FramePprincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonagregarpedido;
     private javax.swing.JButton jButtonconfirmarp;
     private javax.swing.JButton jButtonenviarm;
-    private javax.swing.JComboBox<String> jComboBoxvehiculo;
+    public static javax.swing.JComboBox<String> jComboBoxvehiculo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

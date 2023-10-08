@@ -11,5 +11,32 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>ipc.practica2.Practica2</exec.mainClass>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                  <execution>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>single</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <classpathPrefix>lib/</classpathPrefix>
+                        <mainClass>ipc1.practica2.Practica2</mainClass>
+                    </manifest>
+                </archive>
+                  <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                  </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <name>[IPC1]Practica2_202202768.</name>
 </project>

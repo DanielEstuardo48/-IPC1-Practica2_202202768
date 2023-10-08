@@ -1,11 +1,9 @@
 package gui;
 
 import ipc.practica2.Appstate;
-import ipc.practica2.Motocicleta;
 import ipc.practica2.Motocicleta1;
 import ipc.practica2.Motocicleta2;
 import ipc.practica2.Motocicleta3;
-import ipc.practica2.Pedido;
 import java.util.LinkedList;
 
 /**
@@ -18,9 +16,9 @@ public class FrameMotocicletas extends javax.swing.JFrame {
     LinkedList<Thread> hilomotocicleta2 = new LinkedList<>();
     LinkedList<Thread> hilomotocicleta3 = new LinkedList<>();
     
-    public Motocicleta moto1 = new Motocicleta(this, 130, 80);
-    public Motocicleta moto2 = new Motocicleta(this, 130, 250);
-    public Motocicleta moto3 = new Motocicleta(this, 130, 450);
+    public Motocicleta1 moto1 = new Motocicleta1(this, 130, 80);
+    public Motocicleta2 moto2 = new Motocicleta2(this, 130, 250);
+    public Motocicleta3 moto3 = new Motocicleta3(this, 130, 450);
    
     public FrameMotocicletas() {
         initComponents();
@@ -33,6 +31,7 @@ public class FrameMotocicletas extends javax.swing.JFrame {
         this.Llenardistacnia1();
         this.Llenardistacnia2();
         this.Llenardistacnia3();
+        
     }
     
     /**
@@ -178,13 +177,13 @@ public class FrameMotocicletas extends javax.swing.JFrame {
     //Boton moto 1
     private void Enviarmoto1jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Enviarmoto1jButtonActionPerformed
         for (int i = 0; i < 1; i++) {
-            //Motocicleta1 moto1 = new Motocicleta(this, 130, 80);
+            //Motocicleta1 moto1 = new Motocicleta1(this, 130, 80);
             hilomotocicleta1.add(new Thread(moto1));
             //posY += moto1.getAlto() + 10;
         }
         
-        for (Thread h : hilomotocicleta1) {
-            h.start();
+        for (Thread h1 : hilomotocicleta1) {
+            h1.start();
         }
     }//GEN-LAST:event_Enviarmoto1jButtonActionPerformed
     
@@ -194,8 +193,8 @@ public class FrameMotocicletas extends javax.swing.JFrame {
             hilomotocicleta2.add(new Thread(moto2));
         }
         
-        for (Thread h : hilomotocicleta2) {
-            h.start();
+        for (Thread h2 : hilomotocicleta2) {
+            h2.start();
         }
     }//GEN-LAST:event_Enviarmoto2jButton1ActionPerformed
     
@@ -205,8 +204,8 @@ public class FrameMotocicletas extends javax.swing.JFrame {
             hilomotocicleta3.add(new Thread(moto3));
         }
         
-        for (Thread h : hilomotocicleta3) {
-            h.start();
+        for (Thread h3 : hilomotocicleta3) {
+            h3.start();
         }
     }//GEN-LAST:event_Enviarmoto3jButton2ActionPerformed
     
@@ -254,7 +253,7 @@ public class FrameMotocicletas extends javax.swing.JFrame {
         }
     }
     
-    //Distancia 2
+    //Distancia 3
     private void Llenardistacnia3() {
         int tamano = Appstate.distancia3.size();
         for (Motocicleta3 d : Appstate.distancia3) {

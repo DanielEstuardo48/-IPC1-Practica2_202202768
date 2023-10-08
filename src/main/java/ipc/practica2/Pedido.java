@@ -1,10 +1,12 @@
 package ipc.practica2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author danis
  */
-public class Pedido {
+public class Pedido implements Serializable {
     public String Vehiculo;
     public String Distancia;
     String Monto;

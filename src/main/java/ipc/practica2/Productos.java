@@ -1,11 +1,13 @@
 package ipc.practica2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author danis
  */
 
-public class Productos {
+public class Productos implements Serializable{
     String Nombre;
     Integer Precio;
     

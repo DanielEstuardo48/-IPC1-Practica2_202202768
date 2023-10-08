@@ -13,7 +13,7 @@ import gui.FramePprincipal;
 public class Practica2 {
 
     public static void main(String[] args) {
-        
+        Appstate.deserializar();
         if(Appstate.productos.isEmpty()){
             Productos producto = new Productos("Pizza Grande",100);
             Appstate.productos.add(producto);

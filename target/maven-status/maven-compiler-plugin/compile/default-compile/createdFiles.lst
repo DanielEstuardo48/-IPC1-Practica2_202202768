@@ -1,6 +1,7 @@
 gui\LoginparaP$3.class
 gui\FramePprincipal$3.class
 ipc\practica2\Practica2.class
+gui\FramePprincipal$10.class
 gui\FrameMotocicletas$3.class
 gui\FramePprincipal$5.class
 gui\FrameHistorial$2.class
@@ -17,6 +18,7 @@ gui\FramePprincipal$7.class
 ipc\practica2\Motocicleta3.class
 gui\FramePprincipal$4.class
 gui\FrameMotocicletas$2.class
+gui\FrameHistorial$3.class
 gui\FramePprincipal$9.class
 ipc\practica2\Motocicleta1.class
 gui\FrameHistorial$1.class
@@ -25,7 +27,6 @@ gui\FrameMotocicletas$5.class
 gui\FramePprincipal$1.class
 gui\LoginparaP.class
 gui\FramePprincipal$6.class
-ipc\practica2\Motocicleta.class
 gui\FrameMotocicletas.class
 gui\FramePruductos.class
 gui\FramePprincipal$8.class
